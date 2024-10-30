@@ -1,10 +1,35 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { store } from './app/store.ts'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { PATHS } from './constants/paths.ts'
+import { Login } from './pages/login-page.tsx'
+import { Register } from './pages/register-page.tsx'
 import './index.css'
-import App from './App.tsx'
+import { ConfigProvider, theme } from 'antd'
+
+const router = createBrowserRouter([
+	{
+		path: PATHS.home,
+		element: <h1>Home</h1>
+	},
+	{
+		path: PATHS.login,
+		element: <Login />
+	},
+	{
+		path: PATHS.register,
+		element: <Register />
+	},
+]);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+	<StrictMode>
+		<Provider store={store}>
+			<ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+				<RouterProvider router={router} />
+			</ConfigProvider>
+		</Provider>
+	</StrictMode>,
 )
