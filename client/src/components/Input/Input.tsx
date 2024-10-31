@@ -10,7 +10,7 @@ interface IPropsInput {
 export const Input: FC<IPropsInput> = ({
 	name,
 	type = 'text',
-	placeholder
+	placeholder,
 }) => {
 
 	return (
