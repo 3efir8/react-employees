@@ -8,11 +8,13 @@ import { Login } from './pages/login-page.tsx'
 import { Register } from './pages/register-page.tsx'
 import './index.css'
 import { ConfigProvider, theme } from 'antd'
+import { Auth } from './components/Auth/Auth.tsx'
+import { Employees } from './pages/employees-page.tsx'
 
 const router = createBrowserRouter([
 	{
 		path: PATHS.home,
-		element: <h1>Home</h1>
+		element: <Employees />
 	},
 	{
 		path: PATHS.login,
@@ -28,7 +30,9 @@ createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<Provider store={store}>
 			<ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
-				<RouterProvider router={router} />
+				<Auth>
+					<RouterProvider router={router} />
+				</Auth>
 			</ConfigProvider>
 		</Provider>
 	</StrictMode>,
