@@ -35,7 +35,7 @@ export const Employee: FC = () => {
 
 		try {
 
-			await removeEmployee(data.id).unwrap();
+			await removeEmployee(data!.id).unwrap();
 
 			navigate(`${PATHS.status}/deleted`)
 
@@ -87,7 +87,7 @@ export const Employee: FC = () => {
 							Действия
 						</Divider>
 						<Space>
-							<Link to={`employee/edit/${data.id}`}>
+							<Link to={`/employee/edit/${data.id}`}>
 								<Button
 									shape="round"
 									type="default"

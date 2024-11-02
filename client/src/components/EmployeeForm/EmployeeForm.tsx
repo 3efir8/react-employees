@@ -9,7 +9,7 @@ interface IPropsEmployeeForm<T> {
 	onFinish: (values: T) => void;
 	btnText: string;
 	title: string;
-	error?: string;
+	error?: string | undefined;
 	employee?: T;
 }
 
