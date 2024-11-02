@@ -2,7 +2,7 @@ import { Alert } from "antd";
 import { FC } from "react";
 
 interface IPropsError {
-	message: string;
+	message: string | undefined;
 }
 
 export const Error: FC<IPropsError> = ({ message }) => {

@@ -10,6 +10,8 @@ import './index.css'
 import { ConfigProvider, theme } from 'antd'
 import { Auth } from './components/Auth/Auth.tsx'
 import { Employees } from './pages/employees-page.tsx'
+import { AddEmployee } from './pages/add-employee-page.tsx'
+import { Status } from './pages/status-page.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
 	{
 		path: PATHS.register,
 		element: <Register />
+	},
+	{
+		path: PATHS.employeeAdd,
+		element: <AddEmployee />
+	},
+	{
+		path: `${PATHS.status}/:status`,
+		element: <Status />
 	},
 ]);
 

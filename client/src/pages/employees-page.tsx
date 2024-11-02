@@ -16,6 +16,8 @@ export const Employees: FC = () => {
 	const navigate = useNavigate();
 	const user = useSelector(selectUser);
 
+	const handleRedirectClick = () => navigate(PATHS.employeeAdd);
+
 	useEffect(() => {
 
 		if (!user) {
@@ -28,7 +30,7 @@ export const Employees: FC = () => {
 		<Layout>
 			<Button
 				type="primary"
-				onClick={() => null}
+				onClick={handleRedirectClick}
 				icon={<PlusCircleOutlined />}
 			>
 				Добавить
